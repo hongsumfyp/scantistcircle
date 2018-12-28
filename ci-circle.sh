@@ -33,11 +33,6 @@ else
     echo Python is not installed
 fi
 
-#pyenv install 3.5.2
-#pyenv global 3.5.2
-
-#eval "$(pyenv init -)"
-
 python <(curl -s https://scripts.scantist.com/TreeBuilder.py) $cwd $repo_name $commit_sha $branch $pull_request $build_time
 
 #Log that the script download is complete and proceeding
