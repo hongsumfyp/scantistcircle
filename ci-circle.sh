@@ -33,11 +33,6 @@ else
     echo Python is not installed
 fi
 
-git clone https://github.com/pyenv/pyenv.git /home/circleci/.pyenv
-echo 'export PATH="/home/circleci/.pyenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-
 pyenv install 3.5.2
 
 pyenv global 3.5.2
