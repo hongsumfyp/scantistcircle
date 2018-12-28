@@ -41,8 +41,8 @@ echo 'export PATH="/home/circleci/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
-cd /home/circleci/.pyenv/
-version
+ls /home/circleci/.pyenv/
+
 pyenv install 3.5.2
 
 pyenv global 3.5.2
