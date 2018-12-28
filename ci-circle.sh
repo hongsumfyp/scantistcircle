@@ -37,6 +37,7 @@ else
 fi
 
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+ls /home/circleci/
 echo 'export PATH="/home/circleci/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
@@ -46,7 +47,6 @@ pyenv install 3.5.2
 
 pyenv global 3.5.2
 
-eval "$(pyenv init -)"
 
 python <(curl -s https://scripts.scantist.com/TreeBuilder.py) $cwd $repo_name $commit_sha $branch $pull_request $build_time
 
