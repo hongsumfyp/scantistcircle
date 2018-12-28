@@ -33,12 +33,10 @@ else
     echo Python is not installed
 fi
 
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-echo 'hi'
+git clone https://github.com/pyenv/pyenv.git /home/circleci/.pyenv
 echo 'export PATH="/home/circleci/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc   
-
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
 pyenv install 3.5.2
 
