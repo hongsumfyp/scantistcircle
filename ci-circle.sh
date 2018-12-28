@@ -26,12 +26,27 @@ build_time=$(date +"%s")
 if [ -z ${CIRCLE_PR_NUMBER+x} ]; then pull_request="false"; else pull_request=$CIRCLE_PR_NUMBER; fi
 cwd=$(pwd)
 
+sudo apt-get install python-setuptools
+sudo easy_install pip
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm git
 
 if command -v python &>/dev/null; then
     pip freeze > requirements.txt
 else
     echo Python is not installed
 fi
+
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+echo 'export PATH="/home/circleci/.pyenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+
+
+pyenv install 3.5.2
+
+pyenv global 3.5.2
+
+eval "$(pyenv init -)"
 
 python <(curl -s https://scripts.scantist.com/TreeBuilder.py) $cwd $repo_name $commit_sha $branch $pull_request $build_time
 
