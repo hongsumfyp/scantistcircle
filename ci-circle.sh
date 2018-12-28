@@ -32,10 +32,9 @@ if command -v python &>/dev/null; then
 else
     echo Python is not installed
 fi
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-pyenv install 2.7.11
 
-pyenv global 2.7.11
+pyenv install 3.5.2
+pyenv global 3.5.2
 
 eval "$(pyenv init -)"
 
