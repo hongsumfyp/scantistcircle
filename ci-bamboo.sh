@@ -1,6 +1,6 @@
 #!/bin/bash
 bamboo_SCANTIST_IMPORT_URL="https://api-staging.scantist.io/ci-scan/"
-
+bamboo_SCANTISTTOKEN="ba5e486c-2fb8-4dfc-9d61-73640cc825c4"
 if [ -z ${bamboo_repository_git_username+x} ]; then repo_name=${bamboo_repository_name}; else repo_name=${bamboo_repository_git_username}"/"${bamboo_repository_name}; fi
 if [ -z ${bamboo_repository_revision_number+x} ]; then commit_sha="na"; else commit_sha=${bamboo_repository_revision_number}; fi
 if [ -z ${bamboo_repository_branch_name+x} ]; then branch="na"; else branch=${bamboo_repository_branch_name}; fi
